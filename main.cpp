@@ -2,43 +2,24 @@
 #include <sstream>
 #include "server/server.hpp"
 #include "storage/ddb.hpp"
+#include "config/config.hpp"
 
 constexpr int PORT = 9122;
 
 using namespace storage;
 using namespace server;
+using namespace config;
 
 void loadData(Core& core);
 
 int main() {
     Core core;
-    loadData(core);
+    DefaultManager defaultManager(core);
+    defaultManager.write_default_data("default.txt");
+
     Server server(core,PORT); 
 
     server.start();
 
     return 0;
-}
-
-void loadData(Core& core){
-    std::ifstream file("default.txt");
-
-    if(!file.is_open()){
-        return;
-    }
-
-    std::string line;
-
-    while(std::getline(file,line)){
-        std::stringstream ss(line);
-        std::string key,value;
-
-        std::getline(ss, key, '|'); 
-        std::getline(ss, value);
-
-        core.set(key,value);
-    }
-
-    file.close();
-
 }
