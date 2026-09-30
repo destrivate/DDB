@@ -1,4 +1,5 @@
 #pragma once
+
 #include "../storage/ddb.hpp"
 #include <unistd.h>
 #include <arpa/inet.h>
@@ -6,7 +7,7 @@
 #include <sys/types.h>
 #include <netinet/tcp.h>
 
-namespace server{
+namespace ddb::server{
 	class Server {
         private:
             void handler(int socket);

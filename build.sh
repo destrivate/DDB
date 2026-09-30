@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-g++ -Wall -Wextra -Werror -O3 -I. main.cpp config/*.cpp server/*.cpp storage/*.cpp -o server_app
+g++ -Wall -Wextra -Werror -O3 -I include src/main.cpp src/config/*.cpp src/server/*.cpp src/storage/*.cpp -o build/server_app   
 
-chmod +x ./server_app
+chmod +x ./build/server_app
 
-./server_app
+./build/server_app
 

@@ -1,7 +1,7 @@
 #include "ddb.hpp"
 #include <mutex>    
 
-namespace storage {
+namespace ddb::storage {
     std::string Core::set(const std::string& key, const std::string& value) {
         std::unique_lock<std::shared_mutex> lock(mutex_);
         if (db.count(key) > 0) {

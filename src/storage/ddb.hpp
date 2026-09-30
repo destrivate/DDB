@@ -4,7 +4,7 @@
 #include <shared_mutex>
 #include <shared_mutex>
 
-namespace storage {
+namespace ddb::storage {
     class Core {
         private:
             std::unordered_map<std::string, std::string> db;

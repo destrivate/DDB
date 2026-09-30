@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>   
 
-namespace server {
+namespace ddb::server {
     void Server::handler(int socket){
         char buf[4096];
         
