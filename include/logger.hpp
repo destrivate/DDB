@@ -4,7 +4,6 @@
 #include <string>
 
 namespace include::logger {
-
     inline void log(const std::string& level, const std::string& message) {
         printf("[%s] %s\n", level.c_str(), message.c_str());
     }
@@ -20,5 +19,4 @@ namespace include::logger {
     inline void error(const std::string& message) {
         log("ERROR", message);
     }
-
 }
