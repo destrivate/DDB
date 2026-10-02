@@ -15,7 +15,7 @@ sudo apt update && sudo apt install build-essential g++
 
 ### 2. Сборка:
 ```bash
-g++ -O3 -I. main.cpp server/*.cpp storage/*.cpp -o server_app
+./build.sh
 ```
 ### 3. Запуск:
 ```bash
