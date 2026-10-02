@@ -1,38 +1,28 @@
 # DDB — Fast In-Memory Key-Value DB
 
-Сверхбыстрая база данных на C++ под Linux.
+Fast database in C++ for Linux.
 
-## 📊  Бенчмарк
-* **Нагрузка:** 1000 коннектов / 200 000 команд `set`
-* **Скорость:** ~260 000 RPS (0.77 сек)
+## 📊 Benchmark
+* **Load:** 1000 connects / 200 000 commands `set`
+* **Speed:** ~260 000 RPS (0.77 s)
 
-## 🛠️ Сборка и Запуск
+## 🛠️ Build and Start
 
-### 1. Установка компилятора (ubuntu/debian):
-```bash
-sudo apt update && sudo apt install build-essential g++
-```
 
-### 2. Сборка:
+### Сборка:
 ```bash
 ./build.sh
 ```
-### 3. Запуск:
-```bash
-./server_app
 
-```
+*Put file `default.txt` (format `key|value`) to the root of the binary, if you want to load default data. If they are not needed — it is not necessary to create a file.*
 
-*Положите файл `default.txt` (формат `ключ|значение`) в корень к бинарнику, если хотите загрузить дефолтные значения при старте. Если они не нужны — создавать файл не обязательно.*
+## 🔌 Commands (TCP, Port 9122)
 
-## 🔌 Команды (TCP, Порт 9122)
-Разделитель аргументов — пробел.
-
-* `set <ключ> <значение>` — записать/обновить
+* `set <key> <value>` — write/update
   * Возвращает: `Created` (при создании) или `Updated` (при обновлении)
-* `get <ключ>` — прочитать
-  * Возвращает: значение ключа или `NoneValue` (если ключа нет)
-* `del <ключ>` — удалить
-  * Возвращает: `Success`
+* `get <ключ>` — read
+  * Returns: key value or `NoneValue` (if no key)
+* `del <ключ>` — delete
+  * Returns: `Success`
 
-При синтаксических ошибках возвращает `SyntaxError`.
+For syntax errors, it returns `SyntaxError`.
