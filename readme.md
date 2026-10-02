@@ -9,7 +9,7 @@ Fast database in C++ for Linux.
 ## 🛠️ Build and Start
 
 
-### Сборка:
+### Assembly:
 ```bash
 ./build.sh
 ```
@@ -19,7 +19,7 @@ Fast database in C++ for Linux.
 ## 🔌 Commands (TCP, Port 9122)
 
 * `set <key> <value>` — write/update
-  * Возвращает: `Created` (при создании) или `Updated` (при обновлении)
+  * Returns: `Created` (when created) or `Updated` (when updated)
 * `get <ключ>` — read
   * Returns: key value or `NoneValue` (if no key)
 * `del <ключ>` — delete
